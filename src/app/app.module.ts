@@ -10,6 +10,7 @@ import { LoginPage } from '../pages/acess-control/login/login';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AuthProvider } from '../providers/auth';
 
 let config = {
   apiKey: "AIzaSyCM7kf5HBz5XbKaKDXpUyD5Pm-iWXIwmTk",
@@ -42,7 +43,8 @@ let config = {
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthProvider
   ]
 })
 export class AppModule {}

@@ -17,11 +17,19 @@ export class AuthProvider {
   constructor(private _angularFireAuth: AngularFireAuth) {
     _angularFireAuth
       .authState
-      .subscribe((user: Firebase.User) => {this._user = user; console.log(user) });
+      .subscribe((user: Firebase.User) => this._user = user);
   }
 
   /**
-   * Login with Facebook Firebase Provider.
+   * Verify if user is logged in.
+   * @returns {boolean}
+   */
+  get isAuthenticated(): boolean {
+    return this._user !== null;
+  }
+
+  /**
+   * Log in with Facebook Firebase Provider.
    * @returns {firebase.Promise<any>}
    */
   public loginWithFacebook(){
@@ -32,10 +40,13 @@ export class AuthProvider {
   }
 
   /**
-   * Logout in Firebase.
+   * Log out in Firebase.
    * @returns {firebase.Promise<any>}
    */
   public logout(){
-    return this._angularFireAuth.auth.signOut();
+    return this
+      ._angularFireAuth
+      .auth
+      .signOut();
   }
 }

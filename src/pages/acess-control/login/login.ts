@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../../providers/auth';
+import { HomePage } from '../../home/home';
 
 @Component({
   selector: 'page-login',
@@ -9,7 +10,7 @@ import { AuthProvider } from '../../../providers/auth';
 export class LoginPage {
 
   constructor(private _authProvider: AuthProvider,
-              public navCtrl: NavController,
+              public navController: NavController,
               public navParams: NavParams) {
 
   }
@@ -20,7 +21,8 @@ export class LoginPage {
   public loginFacebook(){
     this
       ._authProvider
-      .loginWithFacebook();
+      .loginWithFacebook()
+      .then(user => this.navController.push(HomePage));
   }
 
   /**

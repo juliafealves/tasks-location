@@ -1,5 +1,7 @@
 # Changelog
 ---
+### 0.2.11
+- Redirect user to Home Page when to execute login.
 
 ## 0.2.10
 - Create application Ionic in blanck.

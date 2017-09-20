@@ -1,7 +1,7 @@
 # Changelog
 ---
 
-## 0.2.9
+## 0.2.10
 - Create application Ionic in blanck.
 - Created the "User" model.
 - Created the "Login" page.
@@ -11,3 +11,4 @@
 - Created AuthProvider to make the login with Firebase.
 - Configured the Firebase to execute the login via Facebook.
 - Created method to execute logout in Firebase.
+- Added button logout in Home Page.

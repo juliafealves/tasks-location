@@ -18,6 +18,17 @@ export class LoginPage {
    * Log in with Facebook
    */
   public loginFacebook(){
-    this._authProvider.loginWithFacebook();
+    this
+      ._authProvider
+      .loginWithFacebook();
+  }
+
+  /**
+   * Log out of the user.
+   */
+  public logout() {
+    this
+      ._authProvider
+      .logout();
   }
 }

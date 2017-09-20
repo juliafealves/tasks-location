@@ -15,6 +15,12 @@ export class LoginPage {
 
   }
 
+  ionViewWillEnter(){
+    if(this._authProvider.isAuthenticated){
+      this.navController.setRoot(HomePage);
+    }
+  }
+
   /**
    * Log in with Facebook
    */
@@ -22,15 +28,6 @@ export class LoginPage {
     this
       ._authProvider
       .loginWithFacebook()
-      .then(user => this.navController.push(HomePage));
-  }
-
-  /**
-   * Log out of the user.
-   */
-  public logout() {
-    this
-      ._authProvider
-      .logout();
+      .then(user => this.navController.setRoot(HomePage));
   }
 }
